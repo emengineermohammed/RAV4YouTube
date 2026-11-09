@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     permissions:
       contents: read
@@ -23,13 +23,6 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
-
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Install Android SDK
-        run: |
-          sdkmanager "platforms;android-35" "build-tools;35.0.0"
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
